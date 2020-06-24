@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Equipo } from "../../models/equipo";
+import { EquiposService } from "../../services/equipos.service";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
 @Component({
   selector: 'app-equipos',
