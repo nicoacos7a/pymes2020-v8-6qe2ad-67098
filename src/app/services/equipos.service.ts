@@ -14,9 +14,7 @@ import { Equipo } from "../models/equipo";
 )
 
 export class EquiposService {
-
   resourceUrl: string;
-
   constructor(private httpClient: HttpClient) {
     this.resourceUrl = "https://pavii.ddns.net/api/equipos/";
   }
