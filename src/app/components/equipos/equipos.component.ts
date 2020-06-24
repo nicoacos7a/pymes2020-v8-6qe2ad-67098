@@ -40,4 +40,78 @@ export class EquiposComponent implements OnInit {
   ngOnInit() {
   }
 
+  Agregar() {
+    this.AccionABMC = "A";
+    this.FormReg.reset(this.FormReg.value);
+    this.submitted = false;
+    this.FormReg.markAsUntouched();
+  }
+
+  Buscar() {
+    this.SinBusquedasRealizadas = false;
+    this.equiposService
+    .get()
+    .subscribe((res: Equipo[]) => {
+      this.ListaEquipos = res;
+    });
+  }
+
+  BuscarPorId(emp, AccionABMC) {
+    window.scroll(0, 0);
+
+    this.equiposService
+    .getById(emp.IdEquipo)
+    .subscribe((res: any) => {
+      this.FormReg.patchValue(res);
+      this.AccionABMC = AccionABMC;
+    });
+  }
+
+  Consultar(emp) {
+    this.BuscarPorId(emp, "C");
+  }
+
+  Modificar(emp) {
+    this.submitted = false;
+    this.FormReg.markAsPristine();
+    this.FormReg.markAsUntouched();
+    this.BuscarPorId(emp, "M");
+  }
+
+  Grabar() {
+    this.submitted = true;
+
+    // verificar que los validadores esten OK
+    if (this.FormReg.invalid) {
+      return;
+    }
+
+    //hacemos una copia de los datos del formulario, para modificar la fecha y luego enviarlo al servidor
+    const itemCopy = { ...this.FormReg.value };
+ 
+    // agregar post
+    if (itemCopy.IdEquipo == 0 || itemCopy.IdEquipo == null) {
+      this.equiposService
+      .post(itemCopy)
+      .subscribe((res: any) => {
+        this.Volver();
+        this.modalDialogService.Alert('Registro agregado correctamente.');
+        this.Buscar();
+      });
+    } else {
+      // modificar put
+      this.equiposService
+      .put(itemCopy.IdEquipo, itemCopy)
+      .subscribe((res: any) => {
+          this.Volver();
+          this.modalDialogService.Alert('Registro modificado correctamente.');
+          this.Buscar();
+        });
+    }
+  }
+
+  Volver() {
+    this.AccionABMC = "L";
+  }
+
 }
