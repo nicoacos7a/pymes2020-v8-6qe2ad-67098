@@ -49,34 +49,30 @@ export class EquiposComponent implements OnInit {
 
   Buscar() {
     this.SinBusquedasRealizadas = false;
-    this.equiposService
-    .get()
-    .subscribe((res: Equipo[]) => {
+    this.equiposService.get().subscribe((res: Equipo[]) => {
       this.ListaEquipos = res;
     });
   }
 
-  BuscarPorId(emp, AccionABMC) {
+  BuscarPorId(eq, AccionABMC) {
     window.scroll(0, 0);
 
-    this.equiposService
-    .getById(emp.IdEquipo)
-    .subscribe((res: any) => {
+    this.equiposService.getById(eq.IdEquipo).subscribe((res: any) => {
       this.FormReg.patchValue(res);
       this.AccionABMC = AccionABMC;
     });
   }
 
-  Consultar(emp) {
-    this.BuscarPorId(emp, "C");
-  }
+  // Consultar(emp) {
+  //   this.BuscarPorId(emp, "C");
+  // }
 
-  Modificar(emp) {
-    this.submitted = false;
-    this.FormReg.markAsPristine();
-    this.FormReg.markAsUntouched();
-    this.BuscarPorId(emp, "M");
-  }
+  // Modificar(emp) {
+  //   this.submitted = false;
+  //   this.FormReg.markAsPristine();
+  //   this.FormReg.markAsUntouched();
+  //   this.BuscarPorId(emp, "M");
+  // }
 
   Grabar() {
     this.submitted = true;
