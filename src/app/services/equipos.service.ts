@@ -29,11 +29,11 @@ export class EquiposService {
     return this.httpClient.get(this.resourceUrl + Id);
   }
 
-  post(obj: Empresa) {
+  post(obj: Equipo) {
     return this.httpClient.post(this.resourceUrl, obj);
   }
 
-  put(Id: number, obj: Empresa) {
+  put(Id: number, obj: Equipo) {
     return this.httpClient.put(this.resourceUrl + Id, obj);
   }
 
