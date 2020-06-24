@@ -15,26 +15,14 @@
           <th class="text-center">Id Equipo</th>
           <th class="text-center">Nombre Equipo</th>
           <th class="text-center">Ranking Equipo</th>
-          <!-- <th class="text-center">Acciones</th> -->
         </tr>
       </thead>
     
       <tbody>
-        <tr *ngFor="let eq of ListaEquipos">
+        <tr *ngFor="let eq of Lista">
           <td class="text-center">{{eq.IdEquipo}}</td>
           <td class="text-center">{{eq.EquipoNombre}}</td>
           <td class="text-center">{{eq.EquipoRanking}}</td>
-          <!-- <td class="text-center">
-            <button type="button" class="btn btn-sm btn-outline-primary" title="Ver" (click)="Consultar(emp)">
-              <span class="fas fa-eye"></span>
-            </button>
-            <button type="button" class="btn btn-sm btn-outline-primary" title="Modificar" (click)="Modificar(emp)">
-              <span class="fas fa-pencil-alt"></span>
-            </button>
-            <button type="button" class="btn btn-sm btn-outline-danger" title="Eliminar" (click)="Eliminar(emp)">
-              <span class="fas fa-trash"></span>
-            </button>
-          </td> -->
         </tr>
       </tbody>
     </table>
