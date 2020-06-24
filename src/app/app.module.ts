@@ -49,7 +49,7 @@ import { EquiposService } from './services/equipos.service';
   entryComponents: [ModalDialogComponent],
   providers: [
      {provide: APP_BASE_HREF, useValue : '/' },
-    { provide: HTTP_INTERCEPTORS, useClass: MyInterceptor, multi: true, providers: [EquiposService] }
+    { provide: HTTP_INTERCEPTORS, useClass: MyInterceptor, multi: true }, [EquiposService]
   ],
   bootstrap: [AppComponent]
 })
