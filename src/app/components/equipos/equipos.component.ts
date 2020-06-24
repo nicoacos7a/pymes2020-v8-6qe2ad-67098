@@ -26,7 +26,7 @@ export class EquiposComponent implements OnInit {
     RD: " Revisar los datos ingresados..."
   };
 
-  ListaEquipos: Equipo[] = [];
+  Lista: Equipo[] = [];
   SinBusquedasRealizadas = true;
   FormReg: FormGroup;
   submitted = false;
@@ -50,7 +50,7 @@ export class EquiposComponent implements OnInit {
   Buscar() {
     this.SinBusquedasRealizadas = false;
     this.equiposService.get().subscribe((res: Equipo[]) => {
-      this.ListaEquipos = res;
+      this.Lista = res;
     });
   }
 
@@ -87,18 +87,14 @@ export class EquiposComponent implements OnInit {
  
     // agregar post
     if (itemCopy.IdEquipo == 0 || itemCopy.IdEquipo == null) {
-      this.equiposService
-      .post(itemCopy)
-      .subscribe((res: any) => {
+      this.equiposService.post(itemCopy).subscribe((res: any) => {
         this.Volver();
         this.modalDialogService.Alert('Registro agregado correctamente.');
         this.Buscar();
       });
     } else {
       // modificar put
-      this.equiposService
-      .put(itemCopy.IdEquipo, itemCopy)
-      .subscribe((res: any) => {
+      this.equiposService.put(itemCopy.IdEquipo, itemCopy).subscribe((res: any) => {
           this.Volver();
           this.modalDialogService.Alert('Registro modificado correctamente.');
           this.Buscar();
