@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Equipo } from "../../models/equipo";
 
 @Component({
   selector: 'app-equipos',
