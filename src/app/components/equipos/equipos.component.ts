@@ -83,15 +83,12 @@ export class EquiposComponent implements OnInit {
   Grabar() {
     this.submitted = true;
 
-    // verificar que los validadores esten OK
     if (this.FormReg.invalid) {
       return;
     }
 
-    //hacemos una copia de los datos del formulario, para modificar la fecha y luego enviarlo al servidor
     const itemCopy = { ...this.FormReg.value };
  
-    // POST
     if (itemCopy.IdEquipo == 0 || itemCopy.IdEquipo == null) {
       this.equiposService.post(itemCopy).subscribe((res: any) => {
         this.Volver();
