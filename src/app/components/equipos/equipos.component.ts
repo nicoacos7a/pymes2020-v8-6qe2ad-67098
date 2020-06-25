@@ -80,17 +80,6 @@ export class EquiposComponent implements OnInit {
     });
   }
 
-  // Consultar(emp) {
-  //   this.BuscarPorId(emp, "C");
-  // }
-
-  // Modificar(emp) {
-  //   this.submitted = false;
-  //   this.FormReg.markAsPristine();
-  //   this.FormReg.markAsUntouched();
-  //   this.BuscarPorId(emp, "M");
-  // }
-
   Grabar() {
     this.submitted = true;
 
@@ -102,21 +91,22 @@ export class EquiposComponent implements OnInit {
     //hacemos una copia de los datos del formulario, para modificar la fecha y luego enviarlo al servidor
     const itemCopy = { ...this.FormReg.value };
  
-    // agregar post
+    // POST
     if (itemCopy.IdEquipo == 0 || itemCopy.IdEquipo == null) {
       this.equiposService.post(itemCopy).subscribe((res: any) => {
         this.Volver();
         this.modalDialogService.Alert('Registro agregado correctamente.');
         this.Buscar();
       });
-    } else {
-      // modificar put
-      this.equiposService.put(itemCopy.IdEquipo, itemCopy).subscribe((res: any) => {
-          this.Volver();
-          this.modalDialogService.Alert('Registro modificado correctamente.');
-          this.Buscar();
-        });
-    }
+    } 
+    // else {
+    //   // PUT
+    //   this.equiposService.put(itemCopy.IdEquipo, itemCopy).subscribe((res: any) => {
+    //       this.Volver();
+    //       this.modalDialogService.Alert('Registro modificado correctamente.');
+    //       this.Buscar();
+    //     });
+    // }
   }
 
   Volver() {
