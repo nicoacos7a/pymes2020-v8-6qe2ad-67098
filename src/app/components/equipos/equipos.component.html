@@ -48,7 +48,7 @@
         </span>
         <span class="text-danger" *ngIf="(FormReg.controls.EquipoNombre.touched || submitted) 
           && (FormReg.controls.EquipoNombre.errors?.minlength || FormReg.controls.EquipoNombre.errors?.maxlength)">
-            Dato texto, 4 a 55 caracteres.
+            Dato texto, 3 a 50 caracteres.
         </span>
       </div>
     </div>
@@ -67,7 +67,7 @@
         </span>
 				<span class="text-danger" *ngIf="(FormReg.controls.EquipoRanking.touched || submitted) 
           && FormReg.controls.EquipoRanking.errors?.pattern">
-            Dato numérico, 1 a 10 dígitos.
+            Dato numérico, 1 a 3 dígitos.
         </span>
       </div>
     </div>
