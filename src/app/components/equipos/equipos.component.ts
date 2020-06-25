@@ -38,6 +38,23 @@ export class EquiposComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.Buscar()
+
+    this.FormReg = this.formBuilder.group({
+
+      IdEquipo: [0],
+      
+      EquipoNombre: [null, [
+        Validators.required, 
+        Validators.minLength(3), 
+        Validators.maxLength(50)
+      ]],
+
+      EquipoRanking: [null, [
+        Validators.required, 
+        Validators.pattern("[0-9]{1,3}")
+      ]]
+    });
   }
 
   Agregar() {
