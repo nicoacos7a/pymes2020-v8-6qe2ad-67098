@@ -15,9 +15,6 @@ export class EquiposComponent implements OnInit {
 
   TituloAccionABMC = {
     A: "(Agregar)",
-    B: "(Eliminar)",
-    M: "(Modificar)",
-    C: "(Consultar)",
     L: "(Listado)"
   };
 
@@ -59,7 +56,7 @@ export class EquiposComponent implements OnInit {
         Validators.required, 
         Validators.pattern("[0-9]{1,10}")
       ]]
-      
+
     });
   }
 

@@ -7,6 +7,7 @@
   </button>
 </div>
 
+<!-- Tabla de equipos -->
 <div id="divTablaResultados" *ngIf="AccionABMC == 'L'">
   <div>
     <table class="table table-bordered table-striped">
@@ -84,7 +85,7 @@
         </button>
     </div>
 
-    <!--texto: Revisar los datos ingresados...-->
+    <!-- Texto: Revisar los datos ingresados... -->
     <div id="divMsjFormRegistro" class="row alert alert-danger" *ngIf="submitted && FormReg.invalid">
         <span class="fas fa-exclamation-sign"></span>{{Mensajes['RD']}}
     </div>
