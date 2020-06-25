@@ -12,9 +12,9 @@
     <table class="table table-bordered table-striped">
       <thead>
         <tr>
-          <th class="text-center">Id Equipo</th>
-          <th class="text-center">Nombre Equipo</th>
-          <th class="text-center">Ranking Equipo</th>
+          <th class="text-center">Id</th>
+          <th class="text-center">Nombre</th>
+          <th class="text-center">Ranking</th>
         </tr>
       </thead>
     
@@ -29,7 +29,7 @@
   </div>
 </div>
 
-<!-- Registro en Alta,Modificacion o Consulta -->
+<!-- Registro de equipo -->
 <form name="FormReg" [formGroup]='FormReg' *ngIf="AccionABMC != 'L'" class="bg-light">
 	<fieldset [disabled]="AccionABMC==='C'">
     
