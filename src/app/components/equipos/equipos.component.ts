@@ -21,7 +21,6 @@ export class EquiposComponent implements OnInit {
   AccionABMC = "L";
 
   Mensajes = {
-    SD: " No se encontraron registros...",
     RD: " Revisar los datos ingresados..."
   };
 
