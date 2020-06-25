@@ -99,14 +99,6 @@ export class EquiposComponent implements OnInit {
         this.Buscar();
       });
     } 
-    // else {
-    //   // PUT
-    //   this.equiposService.put(itemCopy.IdEquipo, itemCopy).subscribe((res: any) => {
-    //       this.Volver();
-    //       this.modalDialogService.Alert('Registro modificado correctamente.');
-    //       this.Buscar();
-    //     });
-    // }
   }
 
   Volver() {
