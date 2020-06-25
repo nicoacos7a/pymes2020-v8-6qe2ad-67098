@@ -71,15 +71,6 @@ export class EquiposComponent implements OnInit {
     });
   }
 
-  BuscarPorId(eq, AccionABMC) {
-    window.scroll(0, 0);
-
-    this.equiposService.getById(eq.IdEquipo).subscribe((res: any) => {
-      this.FormReg.patchValue(res);
-      this.AccionABMC = AccionABMC;
-    });
-  }
-
   Grabar() {
     this.submitted = true;
 
