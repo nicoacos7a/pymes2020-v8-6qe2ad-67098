@@ -52,7 +52,7 @@ export class EquiposComponent implements OnInit {
 
       EquipoRanking: [null, [
         Validators.required, 
-        Validators.pattern("[0-9]{1,3}")
+        Validators.pattern("[0-9]{1,10}")
       ]]
     });
   }
