@@ -12,6 +12,7 @@ import { ModalDialogService } from "../../services/modal-dialog.service";
 export class EquiposComponent implements OnInit {
 
   Titulo = "Equipos";
+
   TituloAccionABMC = {
     A: "(Agregar)",
     B: "(Eliminar)",
@@ -19,7 +20,8 @@ export class EquiposComponent implements OnInit {
     C: "(Consultar)",
     L: "(Listado)"
   };
-  AccionABMC = "L"; // inicialmente inicia en el listado de articulos (buscar con parametros)
+
+  AccionABMC = "L";
 
   Mensajes = {
     SD: " No se encontraron registros...",
@@ -27,8 +29,11 @@ export class EquiposComponent implements OnInit {
   };
 
   Lista: Equipo[] = [];
+
   SinBusquedasRealizadas = true;
+
   FormReg: FormGroup;
+  
   submitted = false;
 
   constructor(
