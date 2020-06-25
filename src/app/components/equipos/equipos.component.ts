@@ -95,7 +95,7 @@ export class EquiposComponent implements OnInit {
     if (itemCopy.IdEquipo == 0 || itemCopy.IdEquipo == null) {
       this.equiposService.post(itemCopy).subscribe((res: any) => {
         this.Volver();
-        this.modalDialogService.Alert('Registro agregado correctamente.');
+        this.modalDialogService.Alert('Equipo agregado exitosamente');
         this.Buscar();
       });
     } 
