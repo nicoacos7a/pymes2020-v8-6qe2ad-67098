@@ -33,7 +33,7 @@ export class EquiposComponent implements OnInit {
   SinBusquedasRealizadas = true;
 
   FormReg: FormGroup;
-  
+
   submitted = false;
 
   constructor(
@@ -59,6 +59,7 @@ export class EquiposComponent implements OnInit {
         Validators.required, 
         Validators.pattern("[0-9]{1,10}")
       ]]
+      
     });
   }
 
